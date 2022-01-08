@@ -16,3 +16,12 @@ export interface Wine  {
   flag: string;
   sommelierComment: string;
 }
+
+export type WineList = Wine[];
+
+export type ProductsList = Product[];
+export interface Product {
+  item: Wine;
+  quantity: number;
+  id: number;
+}

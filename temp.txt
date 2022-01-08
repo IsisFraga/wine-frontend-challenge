@@ -1,0 +1,3 @@
+cVINHOS - tipo de produto
+prBRL_valMin_valMax - price: usado para o filtro
+Mostrar priceMember e priceNonMember

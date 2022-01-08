@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import App from './_app'
 import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
@@ -12,7 +13,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-
+        Redirecting to search...
       </main>
 
       <footer className={styles.footer}>

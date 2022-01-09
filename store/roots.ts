@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
 import { combineSagas } from 'redux-saga-watch-actions'
-import { reducer as app } from './app'
 import { reducer as cart } from './cart'
+import { reducer as app } from './app'
+import { rootSaga as cartSaga } from './cart'
 import { reducer as products } from './products'
+import { rootSaga as productsSaga } from './products'
 
 export const rootReducer = combineReducers({
   app,
@@ -10,4 +12,4 @@ export const rootReducer = combineReducers({
   products
 })
 
-export const rootSaga = combineSagas(appSaga, cartSaga, productsSaga);
+export const rootSaga = combineSagas(cartSaga, productsSaga);

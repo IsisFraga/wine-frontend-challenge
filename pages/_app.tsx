@@ -2,7 +2,7 @@ import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import * as theme from 'theme';
-
+import { wrapper } from 'store';
 const GlobalStyle = createGlobalStyle`
 * {
   box-sizing: border-box;
@@ -37,4 +37,4 @@ function MyApp({ Component, pageProps }: AppProps) {
     )
 }
 
-export default MyApp
+export default wrapper.withRedux(MyApp)

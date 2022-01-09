@@ -6,41 +6,34 @@ interface Actions {
   payload: any;
   type: ActionTypes | unknown; // hydrate == ?
 }
-
 export function reducer(state = initialState, action: Actions) {
   switch (action.type) {
     case HYDRATE: {
       return { ...state, ...action.payload }
     }
-      
-    case ActionTypes.START_LOADING:
+
+    case ActionTypes.SELECT_PRODUCT:
       return {
         ...state,
-        loading: true
+        selectedProduct: action.payload
       }
-      
-    case ActionTypes.FINISH_LOADING:
+
+    case ActionTypes.DESELECT_PRODUCT:
       return {
         ...state,
-        loading: false
+        selectedProduct: null
       }
-      
-    case ActionTypes.APPLICATION_STATUS:
+
+    case ActionTypes.SET_FILTER:
       return {
         ...state,
-        error: action.payload
+        filter: action.payload
       }
-    
-    case ActionTypes.TOGGLE_MODALCART:
+
+    case ActionTypes.SET_PRODUCTS:
       return {
         ...state,
-        modalCart: !state.modalCart
-      }
-    
-    case ActionTypes.TOGGLE_SIDEBAR:
-      return {
-        ...state,
-        modalCart: !state.sidebar
+        productsList: action.payload
       }
     
     default:

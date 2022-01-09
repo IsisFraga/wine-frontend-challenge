@@ -4,7 +4,7 @@ export interface InitialState {
   selectedProduct: Wine | null;
   quantity: number;
   productsList: ProductsList | [];
-  filter: Filters
+  filter: Filters | null
 }
 
 
@@ -15,4 +15,12 @@ export interface Filters {
   limit: number;
   minPrice: number;
   maxPrice: number;
+}
+
+export enum ActionTypes {
+  LOAD_PRODUCTS = "products/LOAD_PRODUCTS",
+  SELECT_PRODUCT = "products/SELECT_PRODUCT",
+  DESELECT_PRODUCT = "products/DESELECT_PRODUCT",
+  SET_FILTER = "products/SET_FILTER",
+  SET_PRODUCTS = "products/SET_PRODUCTS",
 }

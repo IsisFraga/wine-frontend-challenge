@@ -2,12 +2,15 @@ import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import * as theme from 'theme';
-
+import Header from 'components/Header'
+import Sidebar from 'components/Sidebar'
 const GlobalStyle = createGlobalStyle`
 * {
+  @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  list-style-type: none;
 }
 
 html{
@@ -18,9 +21,15 @@ html{
 }
 
 body{
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
   min-height:100vh;
   margin-top:0;
 }
+
+button {
+  background: none;
+  border: none;
 
 `;
 
@@ -30,6 +39,8 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
+        <Header />
+        <Sidebar />
         <Component {...pageProps} />
       </ThemeProvider>
     </>  

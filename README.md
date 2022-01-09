@@ -1,3 +1,11 @@
+## SOBRE A FONTE DO HEADER
+
+Utilizei a Titillium Web por não encontrar a Neo no Google Fonts.
+
+Minha primeira vez utilizando Styled Components, busquei o conceito de "utility first", me baseando no tailwindcss para montar meu tema (incluindo variáveis e breakpoints) do styled components.
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

@@ -25,9 +25,9 @@ const Home: NextPage = () => {
         Redirecting to search...
       </main>
 
-      <footer className={styles.footer}>
+      {/* <footer className={styles.footer}>
 
-      </footer>
+      </footer> */}
     </div>
   )
 }

@@ -6,7 +6,7 @@ export const colors = {
     white: `background-color: #FFF;`,
     green: `background-color: #7EBC43;`,
   },
-
+  
   text: {
     default: `color: #555;`,
     support: `color: #737380;`,
@@ -15,6 +15,7 @@ export const colors = {
     distakBlack: `color: #000;`,
     distakColored: `color: #B6116E;`,
     white: `color: #fff;`,
+    green: `color: #7EBC43;`,
 
   },
 

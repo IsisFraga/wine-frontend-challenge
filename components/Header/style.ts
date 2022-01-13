@@ -121,7 +121,7 @@ export const UserArea = styled.div`
           ${({theme}) => theme.variables.circle
             + theme.variables.layout.itemsCenter
             + theme.variables.layout.justifyCenter
-            + theme.colors.background.secondary
+            + theme.colors.background.white
             + theme.colors.text.green
           }
           position: relative;
@@ -132,6 +132,7 @@ export const UserArea = styled.div`
           margin: auto;
           left: -1.5em;
           top: 1.5em;
+          font-weight: 700;
           p {
             text-align: center;
             margin: auto;

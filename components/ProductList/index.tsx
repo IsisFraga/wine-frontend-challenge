@@ -1,6 +1,6 @@
 import React, {useState, useCallback} from 'react'
 import Image from 'next/image'
-import { ProductListTag, WineCard } from './style'
+import { ProductListTag, WineCard, AddToCart } from './style'
 import { useSelector, useDispatch } from 'react-redux'
 import { Actions } from 'store'
 import {Wine, WineList} from 'types';
@@ -49,8 +49,8 @@ function ProductList ({list}:IProductList) {
                 </div>
               </div>
               <p className={"no-partner"}>não sócio {formatMoney(wine.priceNonMember)}</p>
-              
             </WineCard>
+            <AddToCart>Adicionar</AddToCart>
           </div>
           )
         )}

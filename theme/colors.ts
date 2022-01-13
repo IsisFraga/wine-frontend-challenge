@@ -4,6 +4,7 @@ export const colors = {
     secondary: `background-color: #DEDEDE;`,
     branding: `background-color: #F79552;`,
     white: `background-color: #FFF;`,
+    green: `background-color: #7EBC43;`,
   },
 
   text: {
@@ -13,7 +14,6 @@ export const colors = {
     main: `color: #1D1D1B;`,
     distakBlack: `color: #000;`,
     distakColored: `color: #B6116E;`,
-    green: `color: #7EBC43;`,
     white: `color: #fff;`,
 
   },

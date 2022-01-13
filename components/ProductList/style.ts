@@ -65,6 +65,7 @@ export const WineCard = styled.div`
     ${({theme}) => theme.variables.layout.w100
     + theme.variables.layout.justifyCenter
     }
+   
   }
   img {
     width: 120px;
@@ -135,6 +136,9 @@ export const WineCard = styled.div`
       padding-left: 2px;
       line-height: 28px;
     }
+    .to-cart {
+      background: red;
+    }
 
     ${({theme}) => theme.breakpoints.desktopOnly} {
       ${({theme}) => theme.variables.layout.justifyCenter
@@ -169,5 +173,16 @@ export const WineCard = styled.div`
       font-size: 12px;
     }
   }
-  
+`
+
+export const AddToCart = styled.button`
+  ${({theme}) => theme.colors.background.green
+    + theme.colors.text.white
+    + theme.variables.layout.w100
+    + theme.variables.shadow.small
+  }
+  height: 40px;
+  border-radius: 4px;
+  font-weight: 700;
+  margin-bottom: 2em;
 `

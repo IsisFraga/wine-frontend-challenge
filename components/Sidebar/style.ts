@@ -1,13 +1,26 @@
 import styled from "styled-components";
 
-export const SidebarTag = styled.div`
+export const ShadowMenuMobile = styled.section`
+  z-index: 3;
+  background-color: rgba(100, 100, 100, 0.7);
+  height: 100%;
+  min-height: 500px;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: hidden;
+  `
+  
+  export const SidebarTag = styled.div`
+  height: 100%;
   width: 320px;
-  height: 100vh;
-  position: absolute;
+  position: fixed;
   top: 0;
   overflow-y: auto;
+  overflow-x: hidden;
   transition: all 0.5s ease 0s;
-  z-index: 3;
+  z-index: 10;
   ${({theme}) => theme.breakpoints.desktopOnly} {
     display: none;
   }
@@ -60,10 +73,19 @@ export const SidebarTag = styled.div`
       }
     }
   }
+
+  .h-auto {
+    ${({theme}) => theme.colors.background.default
+    }
+    height: 100vh;
+    
+  }
 `
 
 export const Accordeon = styled.div`
   text-transform: uppercase;
+  overflow-y: scroll;
+  height: 100%;
   ${({theme}) => theme.colors.text.distakColored
     + theme.variables.layout.flexRow
     + theme.variables.layout.itemsCenter
@@ -71,6 +93,7 @@ export const Accordeon = styled.div`
     + theme.colors.background.default
   } 
   ul {
+    height: 100%;
     ${({theme}) => theme.variables.layout.w100}
     li {
       ${({theme}) => theme.variables.layout.w100}

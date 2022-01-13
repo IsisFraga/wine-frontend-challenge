@@ -13,7 +13,8 @@ export const colors = {
     main: `color: #1D1D1B;`,
     distakBlack: `color: #000;`,
     distakColored: `color: #B6116E;`,
-    green: `color: #7EBC43;`
+    green: `color: #7EBC43;`,
+    white: `color: #fff;`,
 
   },
 
@@ -28,6 +29,7 @@ export const colors = {
 
   onlyColors: {
     lightGray: `#DEDEDE;`,
+    medGray: `#888;`,
   }
 
 };

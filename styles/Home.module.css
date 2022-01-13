@@ -8,6 +8,11 @@
   align-items: center;
 }
 
+.desktop-only {
+  display: flex;
+  flex-direction: row;
+}
+
 .footer {
   display: flex;
   flex: 1;

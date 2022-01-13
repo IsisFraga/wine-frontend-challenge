@@ -29,6 +29,7 @@ body{
   font-weight: 700;
   min-height:100vh;
   margin-top:0;
+  background: #f5f5f5;
 }
 
 button {

@@ -61,7 +61,7 @@ export const NavTag = styled.nav`
       position: relative;
       top: 2px;
     }
-    border-bottom: 2px solid #F5F5F5;
+    border-bottom: 2px solid #FFF;
     ${({theme}) => theme.variables.layout.flexRow
       + theme.variables.layout.itemsCenter
       + theme.variables.transition

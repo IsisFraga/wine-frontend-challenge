@@ -22,26 +22,36 @@ function ProductList ({list}:IProductList) {
       </div>
       <div className={"cards-list"}>
         {list?.map((wine: Wine) => (
-          <WineCard key={wine.id}>
-            <img
-              src={wine.image} 
-              alt="foto da garrafa do vinho" 
-              placeholder="blur"
-            />
-            <h5>{wine.name}</h5>
-            <div className="black-friday">
-              <Image
-                className="bf-logo"
-                src= {blackf}
-                alt="logo da campanha de black friday"
+          <div className={"card"} key={wine.id}>
+            <WineCard >
+              <img
+                src={wine.image} 
+                alt="foto da garrafa do vinho" 
+                placeholder="blur"
               />
-            </div>
-            <p className={"original-price"}>{formatMoney(wine.price)}</p>
-            <p className={"discount"}>{wine.discount}% off</p>
-            <p>sócio wine</p><span>{formatMoney(wine.priceMember)}</span>
-            <p>não sócio {formatMoney(wine.priceNonMember)}</p>
-            
-          </WineCard>
+              <div className="black-friday">
+                <Image
+                  className="bf-logo"
+                  src= {blackf}
+                  alt="logo da campanha de black friday"
+                />
+              </div> 
+              <h5>{wine.name}</h5>
+              <div className="discount">
+                <p className={"original-price"}>{formatMoney(wine.price)}</p>
+                <p className={"discount-value"}>{wine.discount}% off</p>
+              </div>
+              <div className="partner">
+                <p className={"yes-partner"}>sócio wine</p>
+                <div className="main-value">
+                  <span className={"currency"}>R$</span>
+                  <span className={"price"}>{(wine.priceMember).toFixed(2).replace(".", ",")}</span>
+                </div>
+              </div>
+              <p className={"no-partner"}>não sócio {formatMoney(wine.priceNonMember)}</p>
+              
+            </WineCard>
+          </div>
           )
         )}
       </div>

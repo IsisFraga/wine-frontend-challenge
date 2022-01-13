@@ -5,78 +5,16 @@ interface PriceOptionsProps {
 }
 
 export const PriceOptions = styled.li<PriceOptionsProps> `
-
-  border: 1px solid #eee;
-  border-radius: 5px;
-  padding: 12px 10px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-bottom: 0.5em;
-
-
-  .container {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-
-
-  .container input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-  }
-
-
-  .checkmark {
-    position: absolute;
-    top: -2px;
-    left: 0;
-    height: 21px;
-    width: 21px;
-    background-color: white;
-    border-radius: 50%;
-    border: 2px solid #ccc;
-  }
-
-  .container input:checked ~ .checkmark {
-    background-color: white;
-    border: 2px solid #B6116E;
-  }
-
-  .checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-  }
-
-  .container input:checked ~ .checkmark:after {
-    display: block;
-  }
-
-  .container .checkmark:after {
-    top: 3px;
-    left: 3px;
-    width: 11px;
-    height: 11px;
-    border-radius: 50%;
-    background: #B6116E;
-  }
-  ${(props) => props.active? 'border-color: #B6116E' : ''}
+  ${({theme}) => theme.variables.inputRadio}
+  ${(props) => props.active ? 'border-color: #B6116E' : ''}
   
 `
 
 
 export const FilterSidebarTag = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
-  overflow-y: auto;
+  overflow-y: hidden;
   overflow-x: hidden;
   transition: all 0.5s ease 0s;
   z-index: 3;

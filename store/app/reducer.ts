@@ -1,6 +1,6 @@
 import { HYDRATE } from 'next-redux-wrapper'
-import { initialState } from './index';
-import { ActionTypes } from './types';
+import { initialState } from './index'
+import { ActionTypes } from './types'
 
 interface Actions {
   payload: any;
@@ -40,7 +40,13 @@ export function reducer(state = initialState, action: Actions) {
     case ActionTypes.TOGGLE_SIDEBAR:
       return {
         ...state,
-        modalCart: !state.sidebar
+        sidebar: !state.sidebar
+      }
+
+    case ActionTypes.TOGGLE_FILTER_SIDEBAR:
+      return {
+        ...state,
+        filterSidebar: !state.filterSidebar
       }
     
     default:

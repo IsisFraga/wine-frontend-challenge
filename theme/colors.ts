@@ -3,6 +3,7 @@ export const colors = {
     default: `background-color: #F5F5F5;`,
     secondary: `background-color: #DEDEDE;`,
     branding: `background-color: #F79552;`,
+    white: `background-color: #FFF;`,
   },
 
   text: {
@@ -21,7 +22,12 @@ export const colors = {
   },
 
   others: {
+    lightGray: `color: #DEDEDE;`,
     mediumGray: `color: #EAEAEA;`,
   },
+
+  onlyColors: {
+    lightGray: `#DEDEDE;`,
+  }
 
 };

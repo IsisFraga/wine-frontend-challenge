@@ -15,6 +15,9 @@ import refrescantes from 'assets/refrescantes.png'
 import espumantes from 'assets/espumantes.png'
 import winePass from 'assets/wine_pass.png'
 import { SidebarTag, Accordeon, InfoTypes } from './style'
+import { useSelector, useDispatch } from 'react-redux'
+import { Actions } from 'store'
+
 
 export const clubesWine = [
   {
@@ -97,8 +100,10 @@ const Sidebar: React.FC = () => {
   const [showClubs, setShowClubs] = useState(false);
   const [showStore, setShowStore] = useState(false);
   const [openSidebar, setOpenSidebar] = useState(true);
+  const dispatch = useDispatch();
+  const {app} = useSelector((state) => state);
   return (
-    <SidebarTag style={{ transform: openSidebar ? "translate3d(0px, 0px, 0px)" : "translate3d(-100%, 0px, 0px)" }}>
+    <SidebarTag style={{ transform: app.sidebar ? "translate3d(0px, 0px, 0px)" : "translate3d(-100%, 0px, 0px)" }}>
       <div className={"account-login"}>
         <div className={"user-image"}>
           <svg width="56" height="60" viewBox="0 0 56 60" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -112,7 +117,7 @@ const Sidebar: React.FC = () => {
           </p>
           <a href="https://www.wine.com.br/sign-in.ep#/identificacao" title="acessar minha conta">entrar</a>
         </div>
-        <button className={"close"} onClick={() => setOpenSidebar(!openSidebar)}>
+        <button className={"close"} onClick={() => dispatch({type: Actions.TOGGLE_SIDEBAR})}>
           <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
             <g fill="none" fillRule="evenodd">
             <path d="M0 0h40v40H0z"/>
@@ -126,11 +131,11 @@ const Sidebar: React.FC = () => {
           <li>
             <div className={"options"} onClick={() => setShowClubs(!showClubs)}>
               <p style={{ color: showClubs ? "#1D1D1B" : "" }}>clube</p>
-              <svg style={{ transform: showClubs ? "rotate(180deg)" : "rotate(0)" }} width="24px" height="24px" fill="#B6116E" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg style={{ transform: showClubs ? "rotate(0)" : "rotate(180deg)" }} width="24px" height="24px" fill="#B6116E" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 16a1 1 0 0 1-.707-.293L5.636 10.05A1 1 0 0 1 7.05 8.636l4.95 4.95 4.95-4.95a1 1 0 0 1 1.414 1.414l-5.657 5.657A1 1 0 0 1 12 16z"/>
               </svg>
             </div>
-            <InfoTypes style={{ height: showClubs ? "350px" : "0" }}>
+            <InfoTypes style={{ height: showClubs ? "0" : "350px" }}>
               { clubesWine.map(item => {
                 return (
                   <figure key={item.name}>

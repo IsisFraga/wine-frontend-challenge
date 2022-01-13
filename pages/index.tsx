@@ -21,6 +21,7 @@ const Home: NextPage = () => {
       <button onClick={() => dispatch({type: Actions.FINISH_LOADING})}>Finish loading</button>
       <button onClick={() => dispatch({type: Actions.TOGGLE_MODALCART})}>Toggle Modal Cart</button>
       <button onClick={() => dispatch({type: Actions.TOGGLE_SIDEBAR})}>Toggle Sidebar</button>
+      <button onClick={() => dispatch({type: Actions.TOGGLE_FILTER_SIDEBAR})}>Toggle Filter Sidebar</button>
       <main className={styles.main}>
         Redirecting to search...
       </main>
@@ -29,7 +30,7 @@ const Home: NextPage = () => {
 
       </footer> */}
     </div>
-  )
+  ) 
 }
 
 export default Home

@@ -2,19 +2,26 @@ import styled from "styled-components";
 
 export const HeaderTag = styled.header`
   ${({theme}) =>theme.variables.texts.navText
-    + theme.colors.background.default
+    + theme.colors.background.white
     + theme.variables.shadow.small
     + theme.variables.layout.w100
   }
-  height: 88px; 
-  z-index: 2; 
+  height: 72px; 
+  z-index: 3; 
   overflow: hidden; 
   position: relative;
+  ${({theme}) => theme.breakpoints.desktopOnly}{
+    height: 88px;
+  }
+  
 `
   
 export const Container = styled.div`
-  padding: 0 5em;
+  ${({theme}) => theme.breakpoints.desktopOnly}{
+    padding: 0 5em;
+  }
   ${({theme}) => theme.variables.layout.container
+  + theme.variables.spacings.smallHorizPadding
     + theme.variables.layout.flexRow
     + theme.variables.layout.justifyBetween 
     + theme.variables.layout.itemsCenter
@@ -33,7 +40,11 @@ export const Container = styled.div`
       }
     }
     h1 {
+      padding-left: 0.5em;
       ${({theme}) => theme.variables.layout.flexRow}
+      ${({theme}) => theme.breakpoints.desktopOnly}{
+        padding-left: 0;
+      }
     }
   }
 `
@@ -50,7 +61,7 @@ export const NavTag = styled.nav`
       position: relative;
       top: 2px;
     }
-    border-bottom: 2px solid #fff;
+    border-bottom: 2px solid #F5F5F5;
     ${({theme}) => theme.variables.layout.flexRow
       + theme.variables.layout.itemsCenter
       + theme.variables.transition
@@ -143,16 +154,19 @@ export const UserArea = styled.div`
 `
 export const SearchBar = styled.div`
   position: relative;
-  z-index: 0; 
+  z-index: 2; 
   top: 5px;
   height: 65px;
   transition: bottom 0.5s, top 0.5s;
-  padding: 15px 5em;
+  padding: 15px 1em 15px 0.5em;
   overflow-x: hidden;
   ${({theme}) => theme.variables.layout.flexRow
     + theme.colors.background.secondary
     + theme.variables.shadow.small
     + theme.variables.layout.itemsCenter
+  }
+  ${({theme}) => theme.breakpoints.desktopOnly}{
+    padding: 15px 5em;
   }
   
   
@@ -206,4 +220,5 @@ export const SearchBar = styled.div`
       width: 25px;
     }
   }
+
 `

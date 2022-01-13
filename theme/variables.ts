@@ -3,8 +3,8 @@ import { colors } from './colors'
 export const variables = {
   spacings: {
     smallPadding: `padding: 1em;`,
-    mediumPadding: `padding: 2em;`,
-    largePadding: `padding: 2em;`,
+    smallHorizPadding: `padding: 0 1em;`,
+    mediumPadding: `padding: 1.5em;`,
   },
   inputs: {
     radio: colors.others.mediumGray,
@@ -17,7 +17,7 @@ export const variables = {
         font-weight: 200;
         font-size: 16px;
         text-transform: capitalize;`,
-    sideBar: colors.text.default 
+    default: colors.text.default 
       + `font-family: 'Lato', sans-serif;
         font-weight: 400;
         font-size: 14px;
@@ -28,6 +28,7 @@ export const variables = {
   },
 
   layout: {
+    h0: `height: 0;`,
     h100: `height: 100%;`,
     w0: `width: 0;`,
     w100: `width: 100%;`,
@@ -45,8 +46,12 @@ export const variables = {
     `,
 
     justifyCenter: `
-      justify-items: center;
+      justify-content: center;
       margin: auto;
+    `,
+
+    justifyStart: `
+      justify-content: flex-start;
     `,
 
     itemsCenter: `

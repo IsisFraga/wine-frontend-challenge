@@ -136,9 +136,6 @@ export const WineCard = styled.div`
       padding-left: 2px;
       line-height: 28px;
     }
-    .to-cart {
-      background: red;
-    }
 
     ${({theme}) => theme.breakpoints.desktopOnly} {
       ${({theme}) => theme.variables.layout.justifyCenter

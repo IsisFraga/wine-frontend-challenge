@@ -1,7 +1,5 @@
 ## SOBRE A FONTE DO HEADER
 
-Utilizei a Titillium Web por não encontrar a Neo no Google Fonts.
-
 Minha primeira vez utilizando Styled Components, busquei o conceito de "utility first", me baseando no tailwindcss para montar meu tema (incluindo variáveis e breakpoints) do styled components.
 
 

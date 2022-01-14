@@ -17,7 +17,7 @@ export const variables = {
   },
   texts: {
     navText: colors.text.default 
-      + `font-family: 'Titillium Web', sans-serif;
+      + `font-family: 'Neo Sans Std', sans-serif;
         font-weight: 200;
         font-size: 16px;
         text-transform: capitalize;`,
@@ -28,7 +28,8 @@ export const variables = {
         text-transform: capitalize;`,
   },
   shadow: {
-    small: `box-shadow: 0px 3px 5px -2px rgba(0,0,0,0.25);`
+    small: `box-shadow: 0px 3px 5px -2px rgba(0,0,0,0.25);`,
+    smallTop: `box-shadow: 0px -3px 5px -2px rgba(0,0,0,0.25);`
   },
 
   layout: {

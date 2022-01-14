@@ -8,15 +8,15 @@ import blackf from 'assets/blackf.png'
 import { formatMoney } from "../../utils/money"
 
 interface IWine {
-  wine?: Wine
+  wine: Wine
 }
 
 
 function Product ({wine}:IWine) {
 
   var stars = [];
-  var starNumber = wine?.rating
-  for (var _i = 0; _i < starNumber; _i++) {
+  var starNumber = wine.rating?
+  for(var _i = 0; _i < starNumber; _i++) {
     if (starNumber == null || starNumber == undefined) {
       return
     } else {
@@ -42,28 +42,28 @@ function Product ({wine}:IWine) {
                   <path fillRule="evenodd" clipRule="evenodd" d="M0.109593 9.3984L4.78088 4.99966L0.109593 0.601601C-0.0249066 0.474959 -0.0371928 0.256777 0.0817881 0.11637C0.200122 -0.0261023 0.403812 -0.0398678 0.537665 0.0867742L5.48313 4.74224C5.62151 4.87301 5.62151 5.12699 5.48313 5.25707L0.537665 9.91323C0.403812 10.0399 0.200122 10.0261 0.0817881 9.88363C0.026824 9.81824 0.000311852 9.73703 0.000311852 9.65581C0.000311852 9.56083 0.0371704 9.46654 0.109593 9.3984Z" fill="#888888"/>
                   </svg>
                 </span>
-                <p>{wine?.country}</p>
+                <p>{wine.country}</p>
                 <span>  
                   <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path fillRule="evenodd" clipRule="evenodd" d="M0.109593 9.3984L4.78088 4.99966L0.109593 0.601601C-0.0249066 0.474959 -0.0371928 0.256777 0.0817881 0.11637C0.200122 -0.0261023 0.403812 -0.0398678 0.537665 0.0867742L5.48313 4.74224C5.62151 4.87301 5.62151 5.12699 5.48313 5.25707L0.537665 9.91323C0.403812 10.0399 0.200122 10.0261 0.0817881 9.88363C0.026824 9.81824 0.000311852 9.73703 0.000311852 9.65581C0.000311852 9.56083 0.0371704 9.46654 0.109593 9.3984Z" fill="#888888"/>
                   </svg>
                 </span>
-                <p className={"current"}>{wine?.region}</p>
+                <p className={"current"}>{wine.region}</p>
               </div>
-              <h3 className={"title"}>{wine?.name}</h3>
+              <h3 className={"title"}>{wine.name}</h3>
             <div className={"main-infos"}>
-              <img src={wine?.flag} alt={"bandeira de " + `${wine.country}`}></img>
-              <p className={"country"}>{wine?.country}</p>
-              <p className={"main"}>{wine?.type}</p>
-              <p className={"main"}>{wine?.classification}</p>
-              <p>{wine?.volume}</p>
+              <img src={wine.flag} alt={"bandeira de " + `${wine.country}`}></img>
+              <p className={"country"}>{wine.country}</p>
+              <p className={"main"}>{wine.type}</p>
+              <p className={"main"}>{wine.classification}</p>
+              <p>{wine.volume}</p>
             </div>
             </div>
-            <img className={"picture"} src={wine?.image} alt={"foto da garrafa do vinho " + `${wine.name}`}></img>
+            <img className={"picture"} src={wine.image} alt={"foto da garrafa do vinho " + `${wine.name}`}></img>
             <div className={"description"}>
               <h3 className={"title description-title"}>descrição</h3>
               <h3 className={"title sommelier"}>Comentário do sommelier</h3>
-              <p className={"wine-description"}>{wine?.sommelierComment}</p>
+              <p className={"wine-description"}>{wine.sommelierComment}</p>
             </div>
           </div>
         </div>
@@ -76,7 +76,7 @@ function Product ({wine}:IWine) {
                 </svg>
                 <p>voltar</p>
               </button>
-              <img className={"picture"} src={wine?.image} alt={"foto da garrafa do vinho " + `${wine.name}`}></img>
+              <img className={"picture"} src={wine.image} alt={"foto da garrafa do vinho " + `${wine.name}`}></img>
             </div>
             <div className="right-content">
               <div className="top-infos">
@@ -87,31 +87,31 @@ function Product ({wine}:IWine) {
                     <path fillRule="evenodd" clipRule="evenodd" d="M0.109593 9.3984L4.78088 4.99966L0.109593 0.601601C-0.0249066 0.474959 -0.0371928 0.256777 0.0817881 0.11637C0.200122 -0.0261023 0.403812 -0.0398678 0.537665 0.0867742L5.48313 4.74224C5.62151 4.87301 5.62151 5.12699 5.48313 5.25707L0.537665 9.91323C0.403812 10.0399 0.200122 10.0261 0.0817881 9.88363C0.026824 9.81824 0.000311852 9.73703 0.000311852 9.65581C0.000311852 9.56083 0.0371704 9.46654 0.109593 9.3984Z" fill="#888888"/>
                     </svg>
                   </span>
-                  <p>{wine?.country}</p>
+                  <p>{wine.country}</p>
                   <span>  
                     <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fillRule="evenodd" clipRule="evenodd" d="M0.109593 9.3984L4.78088 4.99966L0.109593 0.601601C-0.0249066 0.474959 -0.0371928 0.256777 0.0817881 0.11637C0.200122 -0.0261023 0.403812 -0.0398678 0.537665 0.0867742L5.48313 4.74224C5.62151 4.87301 5.62151 5.12699 5.48313 5.25707L0.537665 9.91323C0.403812 10.0399 0.200122 10.0261 0.0817881 9.88363C0.026824 9.81824 0.000311852 9.73703 0.000311852 9.65581C0.000311852 9.56083 0.0371704 9.46654 0.109593 9.3984Z" fill="#888888"/>
                     </svg>
                   </span>
-                  <p className={"current"}>{wine?.region}</p>
+                  <p className={"current"}>{wine.region}</p>
                 </div>
-                <h3 className={"title"}>{wine?.name}</h3>
+                <h3 className={"title"}>{wine.name}</h3>
               <div className={"main-infos"}>
-                <img src={wine?.flag} alt={"bandeira de " + `${wine.country}`}></img>
-                <p className={"country"}>{wine?.country}</p>
-                <p className={"main"}>{wine?.type}</p>
-                <p className={"main"}>{wine?.classification}</p>
-                <p>{wine?.volume}</p>
+                <img src={wine.flag} alt={"bandeira de " + `${wine.country}`}></img>
+                <p className={"country"}>{wine.country}</p>
+                <p className={"main"}>{wine.type}</p>
+                <p className={"main"}>{wine.classification}</p>
+                <p>{wine.volume}</p>
                 <div className="stars">
                   {stars}
                 </div>
-                <p className={"main"}>({wine?.avaliations})</p>
+                <p className={"main"}>({wine.avaliations})</p>
               </div>
               </div>
               <div className={"description"}>
                 <h3 className={"title description-title"}>descrição</h3>
                 <h3 className={"title sommelier"}>Comentário do sommelier</h3>
-                <p className={"wine-description"}>{wine?.sommelierComment}</p>
+                <p className={"wine-description"}>{wine.sommelierComment}</p>
               </div>
               <AddToCart>
                 <div className="counter">
@@ -138,16 +138,16 @@ function Product ({wine}:IWine) {
             <div className="discount">
               <p className={"original-price"}>{formatMoney(wine.price)}</p>
               <div className="no-height">
-                <p className={"discount-value"}>{wine?.discount}% off</p>
+                <p className={"discount-value"}>{wine.discount}% off</p>
               </div>
             </div>
             <div className="partner">
               <div className="main-value">
                 <span className={"currency"}>R$</span>
-                <span className={"price"}>{(wine?.priceMember).toFixed(2).replace(".", ",")}</span>
+                <span className={"price"}>{(wine.priceMember).toFixed(2).replace(".", ",")}</span>
               </div>
             </div>
-            <p className={"no-partner"}>preço não sócio {formatMoney(wine?.priceNonMember)}</p>
+            <p className={"no-partner"}>preço não sócio {formatMoney(wine.priceNonMember)}</p>
           </div>
           <div className={"right"}>
             <AddToCart>Adicionar</AddToCart>

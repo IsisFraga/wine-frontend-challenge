@@ -132,6 +132,7 @@ export const InfoTypes = styled.div`
     + theme.variables.layout.w100
     + theme.variables.transition
   }
+  a{}
   figure {
     text-align: center;
     padding: 0 5px;

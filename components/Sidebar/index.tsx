@@ -23,42 +23,50 @@ export const clubesWine = [
   {
     name: 'essenciais',
     image: essenciais,
-    altText: 'imagem do clube essenciais'
+    altText: 'imagem do clube essenciais',
+    link: 'https://www.wine.com.br/clubewine/essenciais/'
   },
   {
     name: 'surpreendentes',
     image: surpreendentes,
-    altText: 'imagem do clube surpreendentes'
+    altText: 'imagem do clube surpreendentes',
+    link: 'https://www.wine.com.br/clubewine/surpreendentes/'
   },
   {
     name: 'notáveis',
     image: notaveis,
-    altText: 'imagem do clube notáveis'
+    altText: 'imagem do clube notáveis',
+    link: 'https://www.wine.com.br/clubewine/notaveis/'
   },
   {
     name: 'singulares',
     image: singulares,
-    altText: 'imagem do clube singulares'
+    altText: 'imagem do clube singulares',
+    link: 'https://www.wine.com.br/clubewine/singulares/'
   },
   {
     name: 'refrescantes',
     image: refrescantes,
-    altText: 'imagem do clube refrescantes'
+    altText: 'imagem do clube refrescantes',
+    link: 'https://www.wine.com.br/clubewine/refrescantes/'
   },
   {
     name: 'espumantes',
     image: espumantes,
-    altText: 'imagem do clube espumantes'
+    altText: 'imagem do clube espumantes',
+    link: 'https://www.wine.com.br/clubewine/espumantes/'
   },
   {
     name: 'Conheça o Clube Wine',
     image: conheca,
-    altText: 'imagem em desenho de uma caixa com duas garrafas'
+    altText: 'imagem em desenho de uma caixa com duas garrafas',
+    link: 'https://www.wine.com.br/clubewine/'
   },
   {
     name: 'WinePass',
     image: winePass,
-    altText: 'imagem de fundo azul escrito winepass'
+    altText: 'imagem de fundo azul escrito winepass',
+    link: 'https://www.wine.com.br/clubewine/winepass'
   },
 ]
 
@@ -66,32 +74,38 @@ export const storesWine = [
   {
     name: 'loja',
     image: loja,
-    altText: 'imagem que representa a loja da Wine'
+    altText: 'imagem que representa a loja da Wine',
+    link: 'https://www.wine.com.br/loja-vinhos'
   },
   {
     name: 'vinhos',
     image: vinhos,
-    altText: 'imagem do desenho de três garrafas de vinho'
+    altText: 'imagem do desenho de três garrafas de vinho',
+    link: 'https://www.wine.com.br/vinhos/cVINHOS-p1.html'
   },
   {
     name: 'ofertas',
     image: ofertas,
-    altText: 'imagem de uma medalha que representa as ofertas'
+    altText: 'imagem de uma medalha que representa as ofertas',
+    link: 'https://www.wine.com.br/vinhos-promocao'
   },
   {
     name: 'bar & gourmet',
     image: bar,
-    altText: 'imagem do desenho de um copo de dry martini'
+    altText: 'imagem do desenho de um copo de dry martini',
+    link: 'https://www.wine.com.br/gourmet/cGOURMET-p1.html'
   },
   {
     name: 'produtores',
     image: produtores,
-    altText: 'imagem do desenho de um barril que representa os produtores'
+    altText: 'imagem do desenho de um barril que representa os produtores',
+    link: 'https://www.wine.com.br/loja/produtor/'
   },
   {
     name: 'eventos',
     image: eventos,
-    altText: 'imagem do desenho de duas taças de espumante brindando'
+    altText: 'imagem do desenho de duas taças de espumante brindando',
+    link: 'https://www.wineeventos.com.br/encontreembaixador/'
   },
 ]
 
@@ -144,15 +158,17 @@ const Sidebar: React.FC = () => {
                 { clubesWine.map(item => {
                   return (
                     <figure key={item.name}>
-                      <Image
-                        src={item.image}
-                        alt={item.altText}
-                        width="56px"
-                        height="56px"
-                      />
-                      <figcaption>
-                        {item.name}
-                      </figcaption>
+                      <a href={item.link}>
+                        <Image
+                          src={item.image}
+                          alt={item.altText}
+                          width="56px"
+                          height="56px"
+                        />
+                        <figcaption>
+                          {item.name}
+                        </figcaption>
+                      </a>
                     </figure>
                   )
                 })

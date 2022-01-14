@@ -15,6 +15,7 @@ export interface Wine  {
   region: string;
   flag: string;
   sommelierComment: string;
+  volume: string;
 }
 
 export type WineList = Wine[];

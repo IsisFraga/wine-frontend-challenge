@@ -7,6 +7,7 @@ import { Actions } from 'store'
 import wineList from 'mocks/wineList'
 import ProductList from 'components/ProductList'
 import Filter from 'components/Filter'
+import Footer from 'components/Footer'
 
 
 const Catalog: NextPage = () => {
@@ -24,6 +25,7 @@ const Catalog: NextPage = () => {
         <Filter />
         <ProductList list={wineList} />
       </Container>
+      <Footer />
     </>
   ) 
 }

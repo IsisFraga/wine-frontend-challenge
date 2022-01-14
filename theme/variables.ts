@@ -6,6 +6,9 @@ export const variables = {
     smallHorizPadding: `padding: 0 1em;`,
     smallVertPadding: `padding: 0.5em 0;`,
     mediumPadding: `padding: 1.5em;`,
+    mediumHorizPadding: `padding: 0 1.5em;`,
+    largePadding: `padding: 2.5em;`,
+    largeHorizPadding: `padding: 0 2.5em;`,
   },
   inputs: {
     radio: colors.others.mediumGray,

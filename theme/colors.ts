@@ -31,6 +31,7 @@ export const colors = {
   onlyColors: {
     lightGray: `#DEDEDE;`,
     medGray: `#888;`,
+    distakColored: `#B6116E;`,
   }
 
 };

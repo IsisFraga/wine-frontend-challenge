@@ -3,7 +3,8 @@ import Head from 'next/head'
 import App from './_app'
 import styles from '../styles/Home.module.css'
 import { useSelector, useDispatch } from 'react-redux'
-import { Actions } from 'store';
+import { Actions } from 'store'
+import Footer from 'components/Footer'
 
 const Home: NextPage = () => {
   const {app} = useSelector((state) => state);
@@ -25,10 +26,7 @@ const Home: NextPage = () => {
       <main className={styles.main}>
         Redirecting to search...
       </main>
-
-      {/* <footer className={styles.footer}>
-
-      </footer> */}
+      <Footer />
     </div>
   ) 
 }

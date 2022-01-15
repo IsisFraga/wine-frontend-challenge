@@ -186,7 +186,7 @@ export const SearchBar = styled.div`
       border-radius: 4px;
       width: 100%;
       ::placeholder {
-        ${({theme}) => theme.variables.texts.sideBar}
+        ${({theme}) => theme.variables.texts.default}
         font-weight: 600;
         color: #B5B5B5;
       }

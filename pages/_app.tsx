@@ -6,6 +6,7 @@ import { wrapper } from 'store'
 import Header from 'components/Header'
 import Sidebar from 'components/Sidebar'
 import FilterSidebar from 'components/FilterSidebar'
+import Cart from 'components/Cart'
 const GlobalStyle = createGlobalStyle`
 * {
   @import url('http://fonts.cdnfonts.com/css/neo-sans-std?styles=93835,93832,93834,93829,93827,93837');
@@ -47,6 +48,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Header />
         <Sidebar />
         <FilterSidebar />
+        <Cart />
         <Component {...pageProps} />
       </ThemeProvider>
     </>  

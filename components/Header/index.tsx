@@ -65,7 +65,7 @@ const Header: React.FC = () => {
                   <path d="M55 28.1137C55 43.0688 42.9092 55.1878 28 55.1878C13.0908 55.1878 1 43.0688 1 28.1137C1 13.1587 13.0908 1.03967 28 1.03967C42.9092 1.03967 55 13.1587 55 28.1137Z" stroke="#555555" strokeWidth="2"/>
                   </svg>
                 </li>
-                <li>
+                <li onClick={() => dispatch({type: Actions.TOGGLE_MODALCART})}>
                   <Image
                     src= {carrinho}
                     alt="imagem do carrinho de compras"

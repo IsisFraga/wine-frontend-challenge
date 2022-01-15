@@ -25,7 +25,7 @@ export const ShadowMenuMobile = styled.section`
     display: none;
   }
 
-  ${({theme}) => theme.variables.texts.sideBar
+  ${({theme}) => theme.variables.texts.default
     + theme.colors.background.default
     + theme.colors.text.support
     + theme.variables.layout.flexCol

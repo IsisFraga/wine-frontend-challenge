@@ -154,11 +154,11 @@ const Sidebar: React.FC = () => {
                   <path d="M12 16a1 1 0 0 1-.707-.293L5.636 10.05A1 1 0 0 1 7.05 8.636l4.95 4.95 4.95-4.95a1 1 0 0 1 1.414 1.414l-5.657 5.657A1 1 0 0 1 12 16z"/>
                 </svg>
               </div>
-              <InfoTypes style={{ height: showClubs ? "0" : "350px" }}>
+              <InfoTypes style={{ height: showClubs ? "0" : "360px" }}>
                 { clubesWine.map(item => {
                   return (
-                    <figure key={item.name}>
-                      <a href={item.link}>
+                    <a key={item.name} href={item.link}>
+                      <figure>
                         <Image
                           src={item.image}
                           alt={item.altText}
@@ -168,8 +168,8 @@ const Sidebar: React.FC = () => {
                         <figcaption>
                           {item.name}
                         </figcaption>
-                      </a>
-                    </figure>
+                      </figure>
+                    </a>
                   )
                 })
                 }

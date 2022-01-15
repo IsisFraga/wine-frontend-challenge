@@ -15,7 +15,7 @@ interface IWine {
 function Product ({wine}:IWine) {
 
   var stars = [];
-  var starNumber = wine.rating?
+  var starNumber = wine.rating
   for(var _i = 0; _i < starNumber; _i++) {
     if (starNumber == null || starNumber == undefined) {
       return

@@ -103,11 +103,16 @@ export const Accordeon = styled.div`
       
       .options, a {
         padding: 20px 19px;
-        height: 54px; 
         ${({theme}) => theme.variables.layout.flexRow
-        + theme.variables.layout.itemsCenter
-        + theme.variables.layout.justifyBetween 
-        + theme.variables.layout.w100
+          + theme.variables.layout.itemsCenter
+          + theme.variables.layout.justifyBetween 
+        }
+      }
+
+      .options {
+        ${({theme}) =>  theme.variables.layout.justifyBetween
+          + theme.variables.layout.w100
+        }
       }
       a {
         padding: 0;
@@ -117,6 +122,7 @@ export const Accordeon = styled.div`
   
   li:nth-child(n+3) {
     a {
+      width: 100%;
       svg {
         transform: rotate(-90deg);
       }
@@ -132,7 +138,9 @@ export const InfoTypes = styled.div`
     + theme.variables.layout.w100
     + theme.variables.transition
   }
-  a{}
+  a{
+    height: auto;
+  }
   figure {
     text-align: center;
     padding: 0 5px;

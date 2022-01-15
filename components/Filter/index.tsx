@@ -5,7 +5,6 @@ import { Actions } from 'store'
 
 const Filter: React.FC = () => {
   const dispatch = useDispatch();
-  const {app} = useSelector((state) => state);
 
   const [filterPrices, setFilterPrices] = useState([
     {
@@ -34,12 +33,6 @@ const Filter: React.FC = () => {
     {
       price: 'R$200 a R$500',
       id: 'price5',
-      selected: false,
-
-    },
-    {
-      price: 'acima de R$500',
-      id: 'price6',
       selected: false,
 
     },

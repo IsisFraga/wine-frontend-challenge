@@ -37,12 +37,6 @@ const FilterSidebar: React.FC = () => {
       selected: false,
 
     },
-    {
-      price: 'acima de R$500',
-      id: 'price6',
-      selected: false,
-
-    },
   ]);
 
   const selectRadio = useCallback((id) => {

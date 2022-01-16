@@ -17,7 +17,6 @@ const Catalog: NextPage = () => {
   const router = useRouter()
   const search = router.asPath.split('?')[1]
   useEffect(() => {
-    console.log('products.productsList', products.productsList)
     let shouldJustLoad = true
     products.priceFilters.forEach(price => {
       if (search?.indexOf('filter=' + price.queryString) > -1) {
@@ -33,6 +32,11 @@ const Catalog: NextPage = () => {
         type: Actions.LOAD_PRODUCTS
       })
     }
+  }, [])
+  useEffect(() => {
+    dispatch({
+      type: Actions.LOAD_CART
+    })
   }, [])
   return (
     <>

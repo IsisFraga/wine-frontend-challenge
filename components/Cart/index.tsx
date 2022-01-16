@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Image from "next/image";
 import { formatMoney } from "../../utils/money"
 
 import {
@@ -7,6 +6,8 @@ import {
   CartTag,
   EmptyCart,
   FullCart,
+  FinishOrder,
+  WineboxFooter
 } from "./style";
 import { useSelector, useDispatch } from "react-redux";
 import { Actions } from "store";
@@ -17,8 +18,7 @@ import { Actions } from "store";
 const Cart: React.FC = () => {
   const [openCart, setCart] = useState(true);
   const dispatch = useDispatch();
-  const { app } = useSelector((state) => state);
-
+  const { app, product, cart } = useSelector((state) => state);
   const isCartEmpty = false;
 
   return (
@@ -54,7 +54,7 @@ const Cart: React.FC = () => {
               </g>
             </svg>
           </button>
-          <p>WineBox (0)</p>
+          <p>WineBox ({cart.productsList.length})</p>
         </div>
         <div className={"cart-container"}>
           {isCartEmpty ? (
@@ -64,9 +64,51 @@ const Cart: React.FC = () => {
             </EmptyCart>
           ) : (
             <FullCart>
-              <div className={"added-product"}>
-                <img src="" alt="foto da garrafa do vinho" />
-              </div>
+              {cart.productsList.map(product => {
+                return (
+                  <div key={product.id} className={"added-product"}>
+                    <img src={product.image} alt={"foto da garrafa do vinho " + `${product.name}`} />
+                    <div className={"product-infos"}>
+                      <div className={"product-header"}>
+                        <div className={"product-text"}>
+                          <h4>{product.name}</h4>
+                          <p>{product.country}</p>
+                        </div>
+                        <button className={"remove-item"}>
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><g fill="none" fillRule="evenodd"><path d="M0 0h40v40H0z"></path><path fill="#888" d="M21.414 20l7.293-7.293a.999.999 0 1 0-1.414-1.414L20 18.586l-7.293-7.293a.999.999 0 1 0-1.414 1.414L18.586 20l-7.293 7.293a.999.999 0 1 0 1.414 1.414L20 21.414l7.293 7.293a.997.997 0 0 0 1.414 0 .999.999 0 0 0 0-1.414L21.414 20z"></path></g></svg>
+                        </button>
+                      </div>
+                      <div className={"product-footer"}>
+                        <div className="input-quantity">
+                          <button title="Diminuir quantidade de itens">-</button>
+                          <p className={"result"}>0</p>
+                          <button title="Aumentar quantidade de itens">+</button>
+                        </div>
+                        <div className="price">
+                          <p className={"currency"}>R$</p>
+                          <p className={"value"}>{formatMoney(product.priceNonMember).split("R$")}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )
+              })}
+              <WineboxFooter>
+                <div className={"subtotal"}>
+                  <p>Total</p>
+                  <div className="total">
+                    <p className={"currency"}>R$</p>
+                    <p className="total-value">
+                      350,00
+                    </p>
+                  </div>
+                </div>
+                <div className={"cashback"}>
+                  <p className={"value"}>Ganhe até <span>R$ 4,66</span> de cashback nesta compra</p>
+                  <p>Uso do cashback exclusive no app Wine</p>
+                </div>
+                <FinishOrder>Finalizar pedido</FinishOrder>
+              </WineboxFooter>
             </FullCart>
           )}
         </div>

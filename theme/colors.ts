@@ -16,6 +16,8 @@ export const colors = {
     distakColored: `color: #B6116E;`,
     white: `color: #fff;`,
     green: `color: #7EBC43;`,
+    medGrayTitle: `color: #999;`,
+    medGrayMain: `color: #333`,
 
   },
 

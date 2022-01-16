@@ -17,7 +17,6 @@ export const ProductListTag = styled.div`
   text-transform: lowercase;
   position: relative;
   top: -65px;
-  z-index: -1;
   .products-found-info{
     ${({theme}) => theme.variables.layout.flexRow
       + theme.variables.layout.justifyStart

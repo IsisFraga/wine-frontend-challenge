@@ -1,6 +1,14 @@
 import { HYDRATE } from 'next-redux-wrapper'
 import { initialState } from './index';
-export function reducer(state = initialState, action: unknown) {
+import { ActionTypes } from './types'
+
+interface Actions {
+  payload: any;
+  type: ActionTypes | unknown; // hydrate == ?
+}
+
+
+export function reducer(state = initialState, action: Actions) {
   switch (action.type) {
     case HYDRATE: {
       return { ...state, ...action.payload }
@@ -10,6 +18,13 @@ export function reducer(state = initialState, action: unknown) {
       return {
         ...state,
       }
+      
+    case ActionTypes.SET_PRODUCT_LIST:
+      return {
+        ...state,
+        productsList: action.payload
+      }
+
     default:
       return state
   }

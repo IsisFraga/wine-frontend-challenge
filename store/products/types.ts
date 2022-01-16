@@ -24,6 +24,7 @@ export enum ActionTypes {
   DESELECT_PRODUCT = "products/DESELECT_PRODUCT",
   SET_FILTER = "products/SET_FILTER",
   SET_PRODUCTS = "products/SET_PRODUCTS",
+  SEARCH_PRODUCTS = "products/SEARCH_PRODUCTS",
   CHANGE_PRICE_FILTER = "products/CHANGE_PRICE_FILTER",
   SET_PRICE_FILTER = "products/SET_PRICE_FILTER",
 }

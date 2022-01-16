@@ -6,4 +6,5 @@ export * from './types';
 export { rootSaga };
 export const initialState = {
   productsList: [],
+  check: 0
 }

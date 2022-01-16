@@ -25,6 +25,12 @@ export function reducer(state = initialState, action: Actions) {
         productsList: action.payload
       }
 
+    case ActionTypes.SET_CHECK:
+      return {
+        ...state,
+        check: action.payload
+      }
+
     default:
       return state
   }

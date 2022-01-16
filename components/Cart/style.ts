@@ -4,7 +4,6 @@ export const ShadowMenuMobile = styled.section`
   z-index: 3;
   background-color: rgba(100, 100, 100, 0.7);
   height: 100%;
-  height: auto;
   width: 100vw;
   position: fixed;
   top: 0;
@@ -14,6 +13,7 @@ export const ShadowMenuMobile = styled.section`
   
   export const CartTag = styled.div`
   height: 100%;
+  min-height: 500px;
   width: 350px;
   position: fixed;
   top: 0;
@@ -55,6 +55,7 @@ export const ShadowMenuMobile = styled.section`
       + theme.variables.layout.itemsCenter
     }
     overflow-y: scroll;
+    max-height: calc(100vh - 277px);
   }
   `
   
@@ -78,7 +79,6 @@ export const FullCart = styled.div`
   ${({theme}) => theme.variables.texts.default
     + theme.variables.layout.flexCol
   }
-  min-height: 500px;
   .added-product {
     ${({theme}) => theme.variables.layout.flexRow
     }

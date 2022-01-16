@@ -2,6 +2,7 @@ import { ProductsList } from 'types';
 
 export interface InitialState {
   productsList: Product[];
+  check: number
 }
 
 export interface Product {
@@ -21,5 +22,6 @@ export enum ActionTypes {
   REMOVE_PRODUCT = "cart/REMOVE_PRODUCT",
   SET_PRODUCT_LIST = "cart/SET_PRODUCT_LIST",
   CLICK_PRODUCT = "cart/CLICK_PRODUCT",
-  LOAD_CART = 'cart/LOAD_CART'
+  LOAD_CART = 'cart/LOAD_CART',
+  SET_CHECK = 'cart/SET_CHECK'
 }

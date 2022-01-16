@@ -10,6 +10,7 @@ import Filter from 'components/Filter'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { FilterCodes } from 'types';
+import {getQueryVariable} from 'utils/getQueryVariable'
 
 const Catalog: NextPage = () => {
   const {app, products} = useSelector((state) => state);
@@ -27,6 +28,13 @@ const Catalog: NextPage = () => {
         })
       } 
     })
+    if (getQueryVariable('search')) {
+      shouldJustLoad = false
+      dispatch({
+        type: Actions.SEARCH_PRODUCTS,
+        payload: getQueryVariable('search')
+      }) 
+    }
     if (shouldJustLoad) {
       dispatch({
         type: Actions.LOAD_PRODUCTS

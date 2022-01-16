@@ -7,13 +7,33 @@ import { Actions } from 'store'
 import wineList from 'mocks/wineList'
 import ProductList from 'components/ProductList'
 import Filter from 'components/Filter'
-import Footer from 'components/Footer'
-
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
+import { FilterCodes } from 'types';
 
 const Catalog: NextPage = () => {
-  const {app} = useSelector((state) => state);
+  const {app, products} = useSelector((state) => state);
   const dispatch = useDispatch();
-
+  const router = useRouter()
+  const search = router.asPath.split('?')[1]
+  useEffect(() => {
+    console.log('products.productsList', products.productsList)
+    let shouldJustLoad = true
+    products.priceFilters.forEach(price => {
+      if (search?.indexOf('filter=' + price.queryString) > -1) {
+        shouldJustLoad = false
+        return dispatch({
+          type: Actions.CHANGE_PRICE_FILTER,
+          payload: price.id
+        })
+      } 
+    })
+    if (shouldJustLoad) {
+      dispatch({
+        type: Actions.LOAD_PRODUCTS
+      })
+    }
+  }, [])
   return (
     <>
       <Head>
@@ -23,9 +43,8 @@ const Catalog: NextPage = () => {
       </Head>
       <Container>
         <Filter />
-        <ProductList list={wineList} />
+        <ProductList list={products.productsList} />
       </Container>
-      <Footer />
     </>
   ) 
 }

@@ -34,8 +34,6 @@ export const FilterTag = styled.div`
         margin-bottom: 1em;
       }
     }
-
-
   }
 `
 
@@ -49,6 +47,6 @@ export const PriceOptionsDesk = styled.li<PriceOptionsProps> `
   border: none;
   padding: 0.5em;
 
-  ${(props) => props.active? 'border-color: #B6116E' : ''}
+  ${(props) => props.active? 'border-color: #B6116E;' : ''}
   
 `

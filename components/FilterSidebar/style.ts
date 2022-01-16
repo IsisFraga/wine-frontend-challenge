@@ -6,8 +6,7 @@ interface PriceOptionsProps {
 
 export const PriceOptions = styled.li<PriceOptionsProps> `
   ${({theme}) => theme.variables.inputRadio}
-  ${(props) => props.active ? 'border-color: #B6116E' : ''}
-  
+  ${(props) => props.active ? 'border-color: #B6116E;' : ''}
 `
 
 

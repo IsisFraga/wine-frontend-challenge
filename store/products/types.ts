@@ -5,6 +5,7 @@ export interface InitialState {
   quantity: number;
   productsList: ProductsList | [];
   filter: Filters | null
+  priceFilters: PriceFilter[]
 }
 
 
@@ -23,4 +24,14 @@ export enum ActionTypes {
   DESELECT_PRODUCT = "products/DESELECT_PRODUCT",
   SET_FILTER = "products/SET_FILTER",
   SET_PRODUCTS = "products/SET_PRODUCTS",
+  CHANGE_PRICE_FILTER = "products/CHANGE_PRICE_FILTER",
+  SET_PRICE_FILTER = "products/SET_PRICE_FILTER",
 }
+
+export interface PriceFilter {
+  price: string;
+  selected: boolean;
+  id: string;
+  queryString: string
+}
+ 

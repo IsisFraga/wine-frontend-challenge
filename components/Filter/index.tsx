@@ -5,50 +5,7 @@ import { Actions } from 'store'
 
 const Filter: React.FC = () => {
   const dispatch = useDispatch();
-
-  const [filterPrices, setFilterPrices] = useState([
-    {
-      price: 'até R$40',
-      id: 'price1',
-      selected: false,
-    },
-    {
-      price: 'R$40 a R$50',
-      id: 'price2',
-      selected: false,
-
-    },
-    {
-      price: 'R$60 a R$100',
-      id: 'price3',
-      selected: false,
-
-    },
-    {
-      price: 'R$100 a R$200',
-      id: 'price4',
-      selected: false,
-
-    },
-    {
-      price: 'R$200 a R$500',
-      id: 'price5',
-      selected: false,
-
-    },
-  ]);
-
-  const selectRadio = useCallback((id) => {
-    const newArr: { price: string; id: string; selected: boolean; }[] = [...filterPrices]
-    newArr.map(value => {
-      return value.selected = false;
-    })
-    const newElem = newArr.find((element) => element.id == id)
-    const itemToChange = newArr.indexOf(newElem)
-    newArr[itemToChange].selected = true;
-    setFilterPrices(newArr)
-  }, [filterPrices, setFilterPrices])
-
+  const {products, app} = useSelector((state) => state);
   
 
   return (
@@ -60,12 +17,17 @@ const Filter: React.FC = () => {
         <h4>
           Por preço
         </h4>
-        <ul className="price-options" >
-        { filterPrices.map(item => {
+        <ul className={"price-options"} >
+        { products.priceFilters.map(item => {
           return (
             <PriceOptionsDesk key={item.id} active={item.selected}>
               <label className={"container"} htmlFor={item.id}>{item.price}
-                <input type="radio" id={item.id} onChange={(event) => selectRadio(item.id)} checked={item.selected}/>
+                <input 
+                  type="radio" 
+                  id={item.id} 
+                  onClick={() => item.selected ? window.location.search = '' : window.location.search = '?filter=' + item.queryString} 
+                  onChange={() => {}}
+                  checked={item.selected}/>
                 <span className={"checkmark"}></span>
               </label>
             </PriceOptionsDesk>

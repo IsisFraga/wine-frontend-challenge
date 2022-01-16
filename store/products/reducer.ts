@@ -11,7 +11,7 @@ export function reducer(state = initialState, action: Actions) {
     case HYDRATE: {
       return { ...state, ...action.payload }
     }
-
+      
     case ActionTypes.SELECT_PRODUCT:
       return {
         ...state,
@@ -34,6 +34,12 @@ export function reducer(state = initialState, action: Actions) {
       return {
         ...state,
         productsList: action.payload
+      }
+
+    case ActionTypes.SET_PRICE_FILTER:
+      return {
+        ...state,
+        priceFilters: action.payload
       }
     
     default:

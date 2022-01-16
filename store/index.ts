@@ -5,6 +5,7 @@ import { InitialState as AppState } from './app';
 import { ActionTypes as appActionTypes } from './app'
 import { InitialState as CartState } from './cart';
 import { InitialState as ProductsState } from './products';
+import { ActionTypes as productActionTypes } from './products';
 import { rootReducer, rootSaga } from './roots'
 export interface ApplicationState {
   app: AppState;
@@ -25,4 +26,5 @@ export const wrapper = createWrapper(makeStore, { debug: true })
 
 export const Actions = {
   ...appActionTypes,
+  ...productActionTypes
 }

@@ -4,7 +4,7 @@ export const ShadowMenuMobile = styled.section`
   z-index: 3;
   background-color: rgba(100, 100, 100, 0.7);
   height: 100%;
-  min-height: 500px;
+  height: auto;
   width: 100vw;
   position: fixed;
   top: 0;

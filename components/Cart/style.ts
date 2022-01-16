@@ -18,7 +18,7 @@ export const ShadowMenuMobile = styled.section`
   position: fixed;
   top: 0;
   right:0;
-  overflow-y: auto;
+  overflow-y: scroll;
   overflow-x: hidden;
   transition: all 0.5s ease 0s;
   z-index: 10;
@@ -54,6 +54,7 @@ export const ShadowMenuMobile = styled.section`
       + theme.variables.layout.flexCol
       + theme.variables.layout.itemsCenter
     }
+    overflow-y: scroll;
   }
   `
   
@@ -77,6 +78,7 @@ export const FullCart = styled.div`
   ${({theme}) => theme.variables.texts.default
     + theme.variables.layout.flexCol
   }
+  min-height: 500px;
   .added-product {
     ${({theme}) => theme.variables.layout.flexRow
     }
@@ -121,7 +123,7 @@ export const FullCart = styled.div`
 
       .product-footer {
         width: 100%;
-        padding-top: 2.5em;
+        padding-top: 1.5em;
         ${({theme}) => theme.variables.layout.flexRow
           + theme.variables.layout.justifyBetween
           + theme.variables.layout.itemsEnd
@@ -164,6 +166,7 @@ export const WineboxFooter = styled.div`
     + theme.colors.background.white
   }
   position: fixed;
+  z-index: 2;
   bottom: 0;
   padding: 20px;
   height: 217px;
@@ -187,6 +190,20 @@ export const WineboxFooter = styled.div`
       .currency{
         margin-right: 0.25em;
       }
+    }
+  }
+  .cashback {
+    text-transform: none;
+    .value {
+      ${({theme}) => theme.colors.background.lightGreen}
+      padding: 10px;
+      border-radius: 4px;
+      font-size: 12px;
+      text-align: center;
+      margin-bottom: 5px;
+    }
+    p {
+      font-size: 11px;
     }
   }
 `

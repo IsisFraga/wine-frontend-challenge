@@ -5,6 +5,7 @@ export const colors = {
     branding: `background-color: #F79552;`,
     white: `background-color: #FFF;`,
     green: `background-color: #7EBC43;`,
+    lightGreen: `background-color: #e5f2d9;`,
   },
   
   text: {

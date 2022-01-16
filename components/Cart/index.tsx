@@ -63,36 +63,38 @@ const Cart: React.FC = () => {
               <strong>Você ainda não escolheu seus produtos</strong>
             </EmptyCart>
           ) : (
-            <FullCart>
-              {cart.productsList.map(product => {
-                return (
-                  <div key={product.id} className={"added-product"}>
-                    <img src={product.image} alt={"foto da garrafa do vinho " + `${product.name}`} />
-                    <div className={"product-infos"}>
-                      <div className={"product-header"}>
-                        <div className={"product-text"}>
-                          <h4>{product.name}</h4>
-                          <p>{product.country}</p>
+            <>
+              <FullCart>
+                {cart.productsList.map(product => {
+                  return (
+                    <div key={product.id} className={"added-product"}>
+                      <img src={product.image} alt={"foto da garrafa do vinho " + `${product.name}`} />
+                      <div className={"product-infos"}>
+                        <div className={"product-header"}>
+                          <div className={"product-text"}>
+                            <h4>{product.name}</h4>
+                            <p>{product.country}</p>
+                          </div>
+                          <button className={"remove-item"}>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><g fill="none" fillRule="evenodd"><path d="M0 0h40v40H0z"></path><path fill="#888" d="M21.414 20l7.293-7.293a.999.999 0 1 0-1.414-1.414L20 18.586l-7.293-7.293a.999.999 0 1 0-1.414 1.414L18.586 20l-7.293 7.293a.999.999 0 1 0 1.414 1.414L20 21.414l7.293 7.293a.997.997 0 0 0 1.414 0 .999.999 0 0 0 0-1.414L21.414 20z"></path></g></svg>
+                          </button>
                         </div>
-                        <button className={"remove-item"}>
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><g fill="none" fillRule="evenodd"><path d="M0 0h40v40H0z"></path><path fill="#888" d="M21.414 20l7.293-7.293a.999.999 0 1 0-1.414-1.414L20 18.586l-7.293-7.293a.999.999 0 1 0-1.414 1.414L18.586 20l-7.293 7.293a.999.999 0 1 0 1.414 1.414L20 21.414l7.293 7.293a.997.997 0 0 0 1.414 0 .999.999 0 0 0 0-1.414L21.414 20z"></path></g></svg>
-                        </button>
-                      </div>
-                      <div className={"product-footer"}>
-                        <div className="input-quantity">
-                          <button title="Diminuir quantidade de itens">-</button>
-                          <p className={"result"}>0</p>
-                          <button title="Aumentar quantidade de itens">+</button>
-                        </div>
-                        <div className="price">
-                          <p className={"currency"}>R$</p>
-                          <p className={"value"}>{formatMoney(product.priceNonMember).split("R$")}</p>
+                        <div className={"product-footer"}>
+                          <div className="input-quantity">
+                            <button title="Diminuir quantidade de itens">-</button>
+                            <p className={"result"}>0</p>
+                            <button title="Aumentar quantidade de itens">+</button>
+                          </div>
+                          <div className="price">
+                            <p className={"currency"}>R$</p>
+                            <p className={"value"}>{formatMoney(product.priceNonMember).split("R$")}</p>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                )
-              })}
+                  )
+                })}
+              </FullCart>
               <WineboxFooter>
                 <div className={"subtotal"}>
                   <p>Total</p>
@@ -104,12 +106,12 @@ const Cart: React.FC = () => {
                   </div>
                 </div>
                 <div className={"cashback"}>
-                  <p className={"value"}>Ganhe até <span>R$ 4,66</span> de cashback nesta compra</p>
-                  <p>Uso do cashback exclusive no app Wine</p>
+                  <p className={"value"}>Ganhe até <b>R$ 4,66</b> de cashback nesta compra</p>
+                  <p>Uso do cashback exclusivo no app Wine</p>
                 </div>
                 <FinishOrder>Finalizar pedido</FinishOrder>
               </WineboxFooter>
-            </FullCart>
+            </>
           )}
         </div>
       </CartTag>

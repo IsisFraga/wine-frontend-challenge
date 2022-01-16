@@ -4,7 +4,7 @@ export const FooterTag = styled.footer`
   ${({theme}) => theme.breakpoints.desktopOnly}{
     display: none;
   }
-  ${({theme}) =>theme.variables.texts.navText
+  ${({theme}) =>theme.variables.texts.default
     + theme.colors.background.white
     + theme.variables.layout.w100
     + theme.variables.layout.flexRow

@@ -35,7 +35,7 @@ const Header: React.FC = () => {
                   <a href="#/clube">clube</a>
                 </li>
                 <li>
-                  <a href="#/loja">loja</a>
+                  <a onClick={() => window.location.href="/catalog"} href="#">loja</a>
                 </li>
                 <li>
                   <a href="#/produtores">produtores</a>

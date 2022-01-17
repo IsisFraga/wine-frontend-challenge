@@ -70,7 +70,7 @@ function Product ({wine}:IWine) {
         <div className={"left"}>
           <div className="infos-desktop">
             <div className={"left-content"}>
-              <button className={"go-back"}>
+              <button className={"go-back"} onClick={() => window.location.href="/catalog"}>
                 <svg width="13" height="21" viewBox="0 0 13 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fillRule="evenodd" clipRule="evenodd" d="M12.7739 19.8231C13.1237 19.3957 13.0607 18.7657 12.6332 18.416L2.57915 10.1899L12.6332 1.96387C13.0607 1.61414 13.1237 0.984118 12.7739 0.556673C12.4242 0.129229 11.7942 0.066227 11.3667 0.415953L0.366732 9.41595C0.134596 9.60588 -3.05176e-05 9.88998 -3.05176e-05 10.1899C-3.05176e-05 10.4898 0.134596 10.7739 0.366732 10.9639L11.3667 19.9639C11.7942 20.3136 12.4242 20.2506 12.7739 19.8231Z" fill="black"/>
                 </svg>
@@ -154,15 +154,6 @@ function Product ({wine}:IWine) {
           </div>
         </PriceTag>
       </>
-      /* 
-              </div> 
-              <h5>{wine.name}</h5>
-              
-            </WineCard>
-          </div>
-          )
-        )}
-      </div> */
   )
 }
 

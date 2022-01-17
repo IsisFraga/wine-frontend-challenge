@@ -7,6 +7,7 @@ export const FilterTag = styled.div`
     ${({theme}) => theme.variables.layout.w100}
     position: relative;
     top: -86px;
+    min-width: 250px;
   
 
     ${({theme}) => theme.variables.texts.default

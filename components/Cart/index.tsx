@@ -111,7 +111,7 @@ const Cart: React.FC = () => {
                 </div>
                 <div className={"cashback"}>
                   <p className={"value"}>Ganhe até <span>R$ {formatMoney(0.036* cart.check)}</span> de cashback nesta compra</p>
-                  <p>Uso do cashback exclusive no app Wine</p>
+                  <p>Uso do cashback exclusivo no app Wine</p>
                 </div>
                 <FinishOrder>Finalizar pedido</FinishOrder>
               </WineboxFooter>

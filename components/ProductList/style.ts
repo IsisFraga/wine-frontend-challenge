@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+export const ContainerLayout = styled.div`
+${({theme}) => theme.variables.layout.flexCol}
+`
+
 export const ProductListTag = styled.div`
   ${({theme}) => theme.breakpoints.desktopOnly} {
     z-index: 1;

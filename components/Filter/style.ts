@@ -4,9 +4,9 @@ import styled from "styled-components";
 export const FilterTag = styled.div`
   display: none;
   ${({theme}) => theme.breakpoints.desktopOnly} {
+    ${({theme}) => theme.variables.layout.w100}
     position: relative;
     top: -86px;
-    width: 30%;
   
 
     ${({theme}) => theme.variables.texts.default

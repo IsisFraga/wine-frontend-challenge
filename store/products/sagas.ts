@@ -28,7 +28,7 @@ export function* priceFilterTasks({payload: id}) {
 }
 
 function* searchProductTask (action) {
-  const apiCall = yield call(fetch, `https://wine-back-test.herokuapp.com/products?search=${action.payload}`, { method: 'GET' });
+  const apiCall = yield call(fetch, `https://wine-back-test.herokuapp.com/products?name=${action.payload}`, { method: 'GET' });
   const data = yield apiCall.json()
   yield put({type: ActionTypes.SET_PRODUCTS, payload: data.items})
 }

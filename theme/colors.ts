@@ -6,6 +6,7 @@ export const colors = {
     white: `background-color: #FFF;`,
     green: `background-color: #7EBC43;`,
     lightGreen: `background-color: #e5f2d9;`,
+    distakColored: `background-color: #B6116E;`,
   },
   
   text: {

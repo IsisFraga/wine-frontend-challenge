@@ -15,6 +15,7 @@ export const FooterTag = styled.footer`
   border: 1px solid #EAEAEA;
   position: fixed;
   bottom: 0;
+  z-index: 1;
 
   .left, .right {
     ${({theme}) => theme.variables.layout.flexRow 

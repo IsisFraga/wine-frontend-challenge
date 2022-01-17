@@ -4,7 +4,6 @@ import App from './_app'
 import {Container} from 'styles'
 import { useSelector, useDispatch } from 'react-redux'
 import { Actions } from 'store'
-import wineList from 'mocks/wineList'
 import ProductList from 'components/ProductList'
 import Filter from 'components/Filter'
 import { useEffect } from 'react'
@@ -28,11 +27,11 @@ const Catalog: NextPage = () => {
         })
       } 
     })
-    if (getQueryVariable('search')) {
+    if (getQueryVariable('name')) {
       shouldJustLoad = false
       dispatch({
         type: Actions.SEARCH_PRODUCTS,
-        payload: getQueryVariable('search')
+        payload: getQueryVariable('name')
       }) 
     }
     if (shouldJustLoad) {

@@ -53,6 +53,7 @@ export const WineCard = styled.div`
     + theme.variables.texts.default
   }
   width: 156px;
+  cursor: pointer;
   height: 348px;
   ${({theme}) => theme.breakpoints.desktopOnly} {
     width: 256px;

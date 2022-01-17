@@ -5,7 +5,7 @@ export const getCartState = ({cart}) => cart
 
 
 function* getFromStorage () {
-  const previousCart = JSON.parse(localStorage.getItem('currentCart'))
+  const previousCart = JSON.parse(localStorage.getItem('currentCart') || "[]")
   const newArr = [...previousCart]
   let check
   if (newArr.length > 1) {
@@ -15,14 +15,14 @@ function* getFromStorage () {
   } else {
     check = 0
   }
-  yield put({type: ActionTypes.SET_PRODUCT_LIST, payload: previousCart || []})
+  yield put({type: ActionTypes.SET_PRODUCT_LIST, payload: previousCart})
   yield put({type: ActionTypes.SET_CHECK, payload: check})
 }
 
 function* addProductTask(action) {
   const {productsList} = yield select(getCartState)
   const newArr = [...productsList];
-  if (newArr.some(product => product.id === action.payload.id)) {
+  if (newArr.some(product => product.id === action.payload.product.id)) {
     return false;
   }
   const newObj:Product = (({
@@ -39,8 +39,8 @@ function* addProductTask(action) {
     priceNonMember,
     country,
     region,
-    count: 1
-  }))(action.payload)
+    count: action.payload.quantity
+  }))(action.payload.product)
   newArr.push(newObj)
 
   let check

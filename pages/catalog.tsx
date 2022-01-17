@@ -23,7 +23,10 @@ const Catalog: NextPage = () => {
         shouldJustLoad = false
         return dispatch({
           type: Actions.CHANGE_PRICE_FILTER,
-          payload: price.id
+          payload: {
+            id: price.id,
+            page: getQueryVariable('page')
+          }
         })
       } 
     })
@@ -31,12 +34,19 @@ const Catalog: NextPage = () => {
       shouldJustLoad = false
       dispatch({
         type: Actions.SEARCH_PRODUCTS,
-        payload: getQueryVariable('name')
+        payload: {
+          search: getQueryVariable('name'),
+          page: getQueryVariable('page')
+        }
       }) 
     }
     if (shouldJustLoad) {
       dispatch({
-        type: Actions.LOAD_PRODUCTS
+        type: Actions.LOAD_PRODUCTS,
+        payload: {
+          page: getQueryVariable('page') || 1,
+          queryString: '' + getQueryVariable('search') ? '&search=' + getQueryVariable('search') : '' + getQueryVariable('filter') ? '&filter=' + getQueryVariable('filter') : ''
+        }
       })
     }
   }, [])

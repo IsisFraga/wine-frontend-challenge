@@ -68,6 +68,7 @@ export const PaginationTagDesktop = styled.div`
       font-size: 12px;
       font-weight: 700;
       padding: 0 10px;
+      cursor: pointer;
       svg:first-child {
         margin-left: 10px;
       }

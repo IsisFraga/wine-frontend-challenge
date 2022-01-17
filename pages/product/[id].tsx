@@ -5,13 +5,14 @@ import { Actions } from 'store'
 import wineList from 'mocks/wineList'
 import {Wine} from 'types';
 import Product from 'components/Product'
+import { useEffect } from 'react'
 interface IWine {
   wine: Wine
+  id: any
 }
 
-const WinePage: NextPage<IWine> = function ({wine}) {
-  const {app} = useSelector((state) => state);
-  const dispatch = useDispatch();
+const WinePage: NextPage<IWine> = function ({wine}, id) {
+
   return (
     <>
       <Head>

@@ -41,6 +41,24 @@ export function reducer(state = initialState, action: Actions) {
         ...state,
         priceFilters: action.payload
       }
+
+    case ActionTypes.SET_TOTAL_PAGES:
+      return {
+        ...state,
+        totalPages: action.payload
+      }
+
+    case ActionTypes.SET_CURRENT_PAGE:
+      return {
+        ...state,
+        currentPage: action.payload
+      }
+
+    case ActionTypes.SET_TOTAL_PRODUCTS:
+      return {
+        ...state,
+        totalProducts: action.payload
+      }
     
     default:
       return state

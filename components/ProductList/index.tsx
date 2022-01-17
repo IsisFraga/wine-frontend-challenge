@@ -28,7 +28,7 @@ function ProductList ({list}:IProductList) {
           <div className={"cards-list"}>
             {list?.map((wine: Wine) => (
               <div className={"card"} key={wine.id}>
-                <WineCard >
+                <WineCard onClick={() => window.location.href = '/product/' + wine.id}>
                   <img
                     src={wine.image} 
                     alt="foto da garrafa do vinho" 

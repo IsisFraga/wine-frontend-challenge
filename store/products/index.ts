@@ -10,6 +10,10 @@ export const initialState: InitialState = {
   quantity: 0,
   productsList: [],
   filter: null,
+  currentPage: 1,
+  currentQuery: '',
+  totalProducts: 0,
+  totalPages: 0,
   priceFilters: [
     {
       price: "até R$40",

@@ -1,7 +1,7 @@
-import React, {useState, useCallback} from 'react'
+import React, {useState, useCallback, useEffect} from 'react'
 import Image from 'next/image'
 import { ProductTag, AddToCart, PriceTag } from './style'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { Actions } from 'store'
 import {Wine, WineList} from 'types';
 import blackf from 'assets/blackf.png'
@@ -13,7 +13,8 @@ interface IWine {
 
 
 function Product ({wine}:IWine) {
-
+  const [count, setCount] = useState(1)
+  const dispatch = useDispatch()
   var stars = [];
   var starNumber = wine.rating
   for(var _i = 0; _i < starNumber; _i++) {
@@ -115,17 +116,23 @@ function Product ({wine}:IWine) {
               </div>
               <AddToCart>
                 <div className="counter">
-                  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={() => count > 1 ? setCount(count - 1 ) : false}>
                   <rect x="12" y="12" width="24" height="24" rx="12" stroke="white" strokeOpacity="0.1"/>
                   <path opacity="0.4" d="M21.4805 25.6152V23.6621H26.5V25.6152H21.4805Z" fill="white"/>
                   </svg>
-                  <p>1</p>
-                  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <p>{count}</p>
+                  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={() => setCount(count + 1)}>
                   <rect x="12" y="12" width="24" height="24" rx="12" stroke="white" strokeOpacity="0.4"/>
                   <path d="M23.1113 24.8184H19.2246V23.0801H23.1113V19.0957H24.8691V23.0801H28.7656V24.8184H24.8691V28.7832H23.1113V24.8184Z" fill="white"/>
                   </svg>
                 </div>
-                <div className="text">
+                <div className="text" onClick={() => dispatch({
+                  type: Actions.CLICK_PRODUCT,
+                  payload: {
+                    product: wine,
+                    quantity: count
+                  }
+                })}>
                   Adicionar
                 </div>
               </AddToCart>

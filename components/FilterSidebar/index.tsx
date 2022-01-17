@@ -31,7 +31,7 @@ const FilterSidebar: React.FC = () => {
                 <input 
                 type="radio" 
                 id={item.id} 
-                onClick={() => item.selected ? window.location.search = '' : window.location.search = '?filter=' + item.queryString} 
+                onClick={() => item.selected ? window.location.search = '' : window.location.search = '?page=1&limit=10&filter=' + item.queryString} 
                 onChange={() => {}}
                 checked={item.selected}/>
             <span className={"checkmark"}></span>

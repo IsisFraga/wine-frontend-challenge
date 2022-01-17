@@ -6,6 +6,10 @@ export interface InitialState {
   productsList: ProductsList | [];
   filter: Filters | null
   priceFilters: PriceFilter[]
+  currentPage: number
+  currentQuery: string
+  totalProducts: number
+  totalPages: number
 }
 
 
@@ -27,6 +31,10 @@ export enum ActionTypes {
   SEARCH_PRODUCTS = "products/SEARCH_PRODUCTS",
   CHANGE_PRICE_FILTER = "products/CHANGE_PRICE_FILTER",
   SET_PRICE_FILTER = "products/SET_PRICE_FILTER",
+  SET_TOTAL_PRODUCTS = "products/SET_TOTAL_PRODUCTS",
+  SET_CURRENT_PAGE = "products/SET_CURRENT_PAGE",
+  SET_TOTAL_PAGES = "products/SET_TOTAL_PAGES",
+  CHANGE_PAGE = "products/CHANGE_PAGE",
 }
 
 export interface PriceFilter {
